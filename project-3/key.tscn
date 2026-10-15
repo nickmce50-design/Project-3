@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dopfugd4r52v2"]
+
+[ext_resource type="Script" uid="uid://gc4epbyckdd6" path="res://key.gd" id="1_p0yg6"]
+[ext_resource type="Texture2D" uid="uid://cqfo5crs2kfr0" path="res://brick-wall.png" id="2_krfvd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7vt1"]
+radius = 123.79418
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1370596145]
+script = ExtResource("1_p0yg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1778798757]
+position = Vector2(235, 234)
+scale = Vector2(0.140625, 0.3984375)
+texture = ExtResource("2_krfvd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=720114469]
+position = Vector2(-79, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=503845300]
+position = Vector2(311, 43)
+shape = SubResource("CircleShape2D_v7vt1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
